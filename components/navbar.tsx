@@ -32,22 +32,28 @@ const navlinks = [
 ];
 
 export const Navbar = () => {
-  const isMobile = useMedia('(min-width: 768px)', true);
-  return isMobile ? (
-    <div>
+  // const isMobile = useMedia('(min-width: 768px)', true);
+  // return isMobile ? (
+  //   <div>
+  //     <DesktopNav />
+  //   </div>
+  // ) : (
+  //   <div>
+  //     <MobileNav />
+  //   </div>
+  // );
+  return (
+    <>
       <DesktopNav />
-    </div>
-  ) : (
-    <div>
       <MobileNav />
-    </div>
+    </>
   );
 };
 
 const DesktopNav = () => {
   return (
     <>
-      <nav className='max-w-screen-md mx-auto py-6 flex justify-between items-center'>
+      <nav className='max-w-screen-md mx-auto py-6 justify-between items-center hidden md:flex'>
         <Logo />
         <div className='flex items-center gap-12 text-xs tracking-widest'>
           {navlinks.map(link => (
@@ -68,7 +74,7 @@ const DesktopNav = () => {
 const MobileNav = () => {
   return (
     <>
-      <nav className='max-w-screen-md mx-auto p-6 flex justify-between items-center'>
+      <nav className='max-w-screen-md mx-auto p-6 flex md:hidden justify-between items-center'>
         <Logo />
         <Sheet>
           <SheetTrigger>
