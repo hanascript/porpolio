@@ -54,7 +54,7 @@ interface ContainerLeftProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const ContainerLeft = React.forwardRef<HTMLDivElement, ContainerLeftProps>(
   ({ className, variant, ...props }, ref) => (
-    <div className='h-full w-full'>
+    <div className='h-full w-full pl-6'>
       {variant === 'secondary' ? (
         <>
           <div
@@ -83,7 +83,7 @@ interface ContainerRightProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const ContainerRight = React.forwardRef<HTMLDivElement, ContainerRightProps>(
   ({ className, variant, ...props }, ref) => (
-    <div className='col-span-2 flex h-full w-full'>
+    <div className='col-span-2 flex h-full w-full pr-6'>
       {variant === 'secondary' ? (
         <>
           <div ref={ref} className={cn(className)} {...props} />

@@ -8,6 +8,8 @@ body,
   height: 100%;
 }
 
+/* #CE664D */ /* brand red */
+
 @layer base {
   :root {
     --background: 42, 38%, 85%; /* #e7dec9 */

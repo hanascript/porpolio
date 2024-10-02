@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 
-import { Navbar } from '@/components/navbar'
-import { Noto_Sans_Mono as FontSans } from 'next/font/google'
 import { cn } from '@/lib/utils'
+import { Noto_Sans_Mono as FontSans } from 'next/font/google'
 
+import { DesktopNav } from '@/components/desktop-nav'
+import { MobileNav } from '@/components/mobile-nav'
 import './globals.css'
 
 const fontSans = FontSans({
@@ -25,15 +26,19 @@ export default function RootLayout({
     <html lang='en'>
       <body
         className={cn(
-          'mx-auto min-h-screen max-w-screen-lg bg-background px-6 py-12 font-sans antialiased sm:py-24',
+          'mx-auto min-h-screen bg-background font-sans antialiased',
           fontSans.variable
         )}
       >
-        <Navbar />
-        <main className='mx-auto max-w-screen-lg px-6 md:px-3'>{children}</main>
-        <footer className='flex flex-col items-center justify-center pb-6 text-xs tracking-widest'>
-          <p>2024 Nathan Marcellous</p>
-        </footer>
+        <main className='flex'>
+          <div className='mx-auto flex flex-1 flex-col gap-16 py-12'>
+            {children}
+          </div>
+          <div className='hidden min-h-screen w-1/5 border-l border-black lg:block'>
+            <DesktopNav />
+          </div>
+        </main>
+        <MobileNav />
       </body>
     </html>
   )

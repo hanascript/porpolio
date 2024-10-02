@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/container'
 
 const MainPage = () => {
   return (
-    <div className='pb-10'>
+    <div className='mx-auto flex flex-1 flex-col gap-16 py-12'>
       <AboutMe />
       <Projects />
       <Education />
