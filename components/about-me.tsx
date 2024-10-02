@@ -58,11 +58,11 @@ export const AboutMe = () => {
           </Card>
         </ContainerRight>
       </Container>
-      <Container variant='secondary'>
+      {/* <Container variant='secondary'>
         <ContainerFull>
           <LogoSlider />
         </ContainerFull>
-      </Container>
+      </Container> */}
     </div>
   );
 };

@@ -1,11 +1,7 @@
-import { AboutMe } from '@/components/about-me';
-import { Projects } from '@/components/projects';
-import { Education } from '@/components/education';
-import { Container, ContainerFull, ContainerLeft, ContainerRight } from '@/components/ui/container';
-import { Separator } from '@/components/ui/separator';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Title } from '@/components/ui/title';
-import { Test } from '@/components/test';
+import { AboutMe } from '@/components/about-me'
+import { Education } from '@/components/education'
+import { Projects } from '@/components/projects'
+import { Container } from '@/components/ui/container'
 
 const MainPage = () => {
   return (
@@ -13,9 +9,8 @@ const MainPage = () => {
       <AboutMe />
       <Projects />
       <Education />
-      <Container></Container>
-      {/* <Test /> */}
+      <Container />
     </div>
-  );
-};
-export default MainPage;
+  )
+}
+export default MainPage
