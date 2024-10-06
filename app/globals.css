@@ -8,12 +8,15 @@ body,
   height: 100%;
 }
 
-/* #CE664D */ /* brand red */
-
 @layer base {
   :root {
     --background: 42, 38%, 85%; /* #e7dec9 */
     --foreground: 40, 8%, 23%; /* #3e3b35 */
+    --gray-400: #8D8F7E; /* Lightest */ /* icons */
+    --gray-500: #868373; /* header color */
+    --gray-600: #4A5246; /* main color */
+    --gray-700: #4E4B42; /* Darkest */ /* notifications */
+    --primary-400: #E26352; /* brand red */
     --primary: 38, 16%, 45%; /* #867962 */
     --primary-shade: 27, 30%, 63%; /* #BC9D83 */
     --primary-foreground: 48, 30%, 79%; /* #DAD4BB */
