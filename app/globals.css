@@ -12,13 +12,13 @@ body,
   :root {
     --background: 42, 38%, 85%; /* #e7dec9 */
     --foreground: 40, 8%, 23%; /* #3e3b35 */
-    --gray-400: #8D8F7E; /* Lightest */ /* icons */
-    --gray-500: #868373; /* header color */
-    --gray-600: #4A5246; /* main color */
-    --gray-700: #4E4B42; /* Darkest */ /* notifications */
-    --primary-400: #E26352; /* brand red */
     --primary: 38, 16%, 45%; /* #867962 */
+    --primary-100: 7, 71%, 60%; /* #E26352 brand red */
     --primary-shade: 27, 30%, 63%; /* #BC9D83 */
+    --primary-300: 67, 7%, 53%; /*  #8E907F icons */
+    --primary-400: 51, 8%, 49%; /* #878473 header gray */
+    --primary-500: 100, 8%, 30%; /* #4A5346 main gray */
+    --primary-600: 45, 8%, 28%; /* #4D4A42 notifications */
     --primary-foreground: 48, 30%, 79%; /* #DAD4BB */
     --secondary: 208, 11%, 34%; /* #4C565F  */
     --secondary-shade: 184, 24%, 74%; /* #ADCBCD */
@@ -43,6 +43,7 @@ body,
     --popover-foreground: 46, 4%, 30%; /* #4f4e43 #8D8F7E */
     --input: 42, 38%, 85%; /* #e7dec9 */
     --ring: 40, 8%, 23%; /* #3e3b35 */
+    --disabled: 51, 10%, 62%; /* #a9a695 disabled button */
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;

@@ -35,6 +35,11 @@ const config: Config = {
         },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
+          '100': 'hsl(var(--primary-100))',
+          '300': 'hsl(var(--primary-300))',
+          '400': 'hsl(var(--primary-400))',
+          '500': 'hsl(var(--primary-500))',
+          '600': 'hsl(var(--primary-600))',
           shade: 'hsl(var(--primary-shade))',
           foreground: 'hsl(var(--primary-foreground))'
         },
@@ -67,6 +72,7 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        disabled: 'hsl(var(--disabled))',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',
