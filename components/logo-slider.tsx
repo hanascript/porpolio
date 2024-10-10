@@ -1,24 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { FaReact, FaFigma } from 'react-icons/fa'
-import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri'
-import { SiExpress, SiTypescript, SiPostgresql } from 'react-icons/si'
-import { GrMysql } from 'react-icons/gr'
 import { cn } from '@/lib/utils'
+import { motion } from 'framer-motion'
 
 // Source: https://medium.com/@caden0002/implementing-an-infinite-slider-in-react-with-tailwind-css-and-framer-motion-69173adb31a3
 
-const logos = [
-  { icon: <RiNextjsFill /> },
-  { icon: <FaReact /> },
-  { icon: <SiExpress /> },
-  { icon: <SiTypescript /> },
-  { icon: <RiTailwindCssFill /> },
-  { icon: <FaFigma /> },
-  { icon: <GrMysql /> },
-  { icon: <SiPostgresql /> }
-]
 
 type LogoSliderProps = {
   logos: JSX.Element[]

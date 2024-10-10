@@ -21,14 +21,14 @@ body,
     --primary-600: 45, 8%, 28%; /* #4D4A42 notifications */
     --primary-foreground: 48, 30%, 79%; /* #DAD4BB */
     --secondary: 208, 11%, 34%; /* #4C565F  */
-    --secondary-shade: 184, 24%, 74%; /* #ADCBCD */
+    --secondary-shade: 184, 24%, 74%; /* #ADCBCD  */
     --secondary-foreground: 48, 30%, 79%; /* #DAD4BB */
-    --muted: 48, 30%, 79%; /* #DAD4BB */
+    --muted: 48, 30%, 79%; /* #DAD4BB #D8D2C4 */
     --muted-shade: 48, 37%, 87%; /* #EAE5D1 */
     --muted-foreground: 40, 8%, 23%; /* #3e3b35 */
-    --accent: 45, 9%, 26%; /* #49463D */
+    --accent: 42, 20.41%, 80.78%; /* #49463D #D8D2C4 */
     --accent-foreground: 48, 30%, 79%; /* #DAD4BB */
-    --success: 77, 15%, 42%; /* #727b5b */
+    --success: 122.37, 41.76%, 35.69%; /* #727b5b #358138 */
     --success-foreground: 48, 30%, 79%; /* #DAD4BB */
     --warn: 50, 48%, 77%; /* #e1d8aa */
     --warn-foreground: 40, 8%, 23%; /* #3e3b35 */

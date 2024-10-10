@@ -6,6 +6,11 @@ import { Noto_Sans_Mono as FontSans } from 'next/font/google'
 import { DesktopNav } from '@/components/desktop-nav'
 import { MobileNav } from '@/components/mobile-nav'
 import './globals.css'
+import { Clock } from '@/components/clock'
+import { TerminalLayer } from '@/components/terminal'
+import { Button } from '@/components/ui/button'
+import { EllipsisIcon, EllipsisVertical } from 'lucide-react'
+import { Header } from '@/components/header'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -26,18 +31,12 @@ export default function RootLayout({
     <html lang='en'>
       <body
         className={cn(
-          'mx-auto min-h-screen bg-background font-sans antialiased',
+          'mx-auto bg-background p-4 font-sans antialiased',
           fontSans.variable
         )}
       >
-        <main className='flex'>
-          <div className='mx-auto flex flex-1 flex-col gap-16 py-12'>
-            {children}
-          </div>
-          <div className='hidden min-h-screen w-1/5 border-l border-black lg:block'>
-            <DesktopNav />
-          </div>
-        </main>
+        <Header />
+        <main className='mx-auto max-w-screen-lg'>{children}</main>
         <MobileNav />
       </body>
     </html>

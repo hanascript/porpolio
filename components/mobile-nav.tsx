@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export const MobileNav = () => {
   return (
-    <div className='fixed bottom-10 left-1/2 flex w-11/12 -translate-x-1/2 items-center justify-between rounded-2xl border border-foreground/15 bg-gradient-to-tr from-transparent to-foreground/5 p-2 pl-6 backdrop-blur-md sm:w-3/4 lg:hidden'>
+    <div className="fixed bottom-10 left-1/2 -translate-x-1/2 w-11/12 sm:w-3/4 lg:w-2/5 p-2 pl-6 bg-gradient-to-tr from-transparent to-foreground/5 border border-foreground/15 rounded-2xl flex items-center justify-between backdrop-blur-md">
       <Link href='/'>
         <h1 className={cn('font-bold')}>HanaScript</h1>
       </Link>
@@ -17,7 +17,7 @@ export const MobileNav = () => {
           </Link>
         ))}
       </div> */}
-        <Sun />
+        <Sun className='size-4' />
     </div>
   )
 }

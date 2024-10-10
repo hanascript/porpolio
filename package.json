@@ -31,7 +31,8 @@
     "react-use": "^17.5.0",
     "sugar-high": "^0.7.0",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "use-scramble": "^2.2.15"
   },
   "devDependencies": {
     "@types/node": "^20",

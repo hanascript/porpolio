@@ -39,18 +39,18 @@ export const Terminal = ({ children, className, title }: Props) => {
 
 export const TerminalLayer = ({ children, title, className }: Props) => {
   return (
-    <div className='relative mt-4 border border-accent p-2'>
+    <div className='relative mt-4 border border-black p-2'>
       <div
         className={cn(
-          'absolute -top-4 left-3 bg-muted px-0.5 text-lg font-semibold',
+          'absolute -top-4 left-3 bg-background px-0.5  ',
           className
         )}
-        style={{
-          backgroundImage: `radial-gradient(#EAE5D1 1px, transparent 1px)`,
-          backgroundSize: '5px 5px'
-        }}
+        // style={{
+        //   backgroundImage: `radial-gradient(#EAE5D1 1px, transparent 1px)`,
+        //   backgroundSize: '5px 5px'
+        // }}
       >
-        <span>[{title}]</span>
+        <span>{title}</span>
       </div>
       {children}
     </div>
