@@ -1,54 +1,64 @@
 import { DiamondIcon } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
+import { BarLoader } from './animations/bar-loader'
+import Image from 'next/image'
 
 type Props = {
   children: React.ReactNode
   className?: string
   title: string
+  image?: string
 }
 
-export const Terminal = ({ children, className, title }: Props) => {
+export const Terminal = ({
+  children,
+  className,
+  title,
+  image,
+}: Props) => {
   return (
-    <div
-      className={cn(
-        'flex flex-col border bg-muted',
-        className
-      )}
-    >
-      <div className='bg-muted-shade flex h-10 w-full items-center justify-between px-3 text-sm'>
+    <div className={cn('shadow-6xl flex flex-col bg-accent rounded w-full max-h-72', className)}>
+      <div className='flex h-10 w-full items-center justify-between rounded-t bg-primary-500 px-3 text-sm text-background'>
         <p>{title}</p>
         <div className='flex items-center gap-2'>
-          <DiamondIcon className='size-3 fill-accent opacity-30' />
-          <DiamondIcon className='size-3 fill-accent opacity-60' />
-          <DiamondIcon className='size-3 fill-accent opacity-90' />
+          <BarLoader />
         </div>
       </div>
       <div
-        className='flex-1  p-3 text-sm'
+        className='relative flex-1 p-3 text-sm'
         style={{
           backgroundImage: `radial-gradient(#EAE5D1 1px, transparent 1px)`,
           backgroundSize: '5px 5px'
         }}
       >
+        {image && (
+          <div
+            className={cn(
+              'relative mb-2 h-48 aspect-video w-full'
+            )}
+          >
+            <Image src={image} alt={title} fill className='rounded-md' />
+          </div>
+        )}
         {children}
       </div>
     </div>
   )
 }
 
-export const TerminalLayer = ({ children, title, className }: Props) => {
+export const TerminalBoarder = ({ children, title, className }: Props) => {
   return (
     <div className='relative mt-4 border border-black p-2'>
       <div
         className={cn(
-          'absolute -top-4 left-3 bg-background px-0.5  ',
+          'absolute -top-4 left-3 bg-card px-1 uppercase',
           className
         )}
-        // style={{
-        //   backgroundImage: `radial-gradient(#EAE5D1 1px, transparent 1px)`,
-        //   backgroundSize: '5px 5px'
-        // }}
+        style={{
+          backgroundImage: `radial-gradient(#EAE5D1 1px, transparent 1px)`,
+          backgroundSize: '5px 5px'
+        }}
       >
         <span>{title}</span>
       </div>

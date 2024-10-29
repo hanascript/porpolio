@@ -7,7 +7,8 @@ const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}'
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './features/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
     container: {
@@ -18,6 +19,9 @@ const config: Config = {
       }
     },
     extend: {
+      boxShadow: {
+        '6xl': '6px 6px 0px 0px rgba(161,155,130,1);'
+      },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
         literata: ['var(--font-literata)', ...fontFamily.sans]

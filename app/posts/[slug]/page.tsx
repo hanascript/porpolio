@@ -3,14 +3,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+import { MDXContent } from '@/components/mdx-content'
 import { getPostBySlug } from '@/lib/posts'
 import { formatDate } from '@/lib/utils'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { MDXContent } from '@/components/mdx-content'
 
 export default async function Post({ params }: { params: { slug: string } }) {
-  const { slug } = params
+  const { slug } = await params
+
   const post = await getPostBySlug(slug)
+
+  console.log(post)
 
   if (!post) {
     notFound()
@@ -20,7 +23,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const { title, summary, image, author, publishedAt } = metadata
 
   return (
-    <section >
+    <section>
       <div className='container'>
         <Link
           href='/posts'
@@ -48,10 +51,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
           </p>
         </header>
 
-        <main className='prose dark:prose-invert mt-16 max-w-none'>
-          <MDXContent source={content} />
+        <main className='prose mt-16 max-w-none dark:prose-invert'>
+          <MDXRemote source={content} />
         </main>
       </div>
     </section>
   )
+
 }

@@ -84,7 +84,7 @@ export function VelocityScroll({
         directionFactor.current = 1
       }
 
-      moveBy += directionFactor.current * moveBy * velocityFactor.get()
+      moveBy += directionFactor.current * moveBy 
 
       baseX.set(baseX.get() + moveBy)
     })
@@ -106,10 +106,10 @@ export function VelocityScroll({
   }
 
   return (
-    <section className="relative bg-red-500 overflow-clip">
-    <ParallaxText baseVelocity={default_velocity} className={className}>
-      {text}
-    </ParallaxText>
-     </section>
+    <section className='w-[330px]'>
+      <ParallaxText baseVelocity={default_velocity} className={className}>
+        {text}
+      </ParallaxText>
+    </section>
   )
 }

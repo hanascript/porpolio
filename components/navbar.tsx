@@ -1,88 +1,30 @@
-'use client'
-
+import { DATA } from '@/data/resume'
+import { cn } from '@/lib/utils'
+import { Sun } from 'lucide-react'
 import Link from 'next/link'
-import { AlignJustify } from 'lucide-react'
-import { useMediaQuery } from '@/hooks/use-media-query'
-import { useMedia } from 'react-use'
-
-import { Logo } from '@/components/logo'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-
-const navlinks = [
-  {
-    href: '/#about-me',
-    text: 'About me'
-  },
-  {
-    href: '/#projects',
-    text: 'Projects'
-  },
-  {
-    href: '/#experience',
-    text: 'Experience'
-  },
-  {
-    href: '/Posts',
-    text: 'Posts'
-  },
-  {
-    href: '/#contact',
-    text: 'Contact'
-  }
-]
 
 export const Navbar = () => {
-  return (
-    <>
-      <DesktopNav />
-      <MobileNav />
-    </>
-  )
-}
+  const LINKS = DATA.navbar
 
-const DesktopNav = () => {
   return (
-    <>
-      <nav className='mx-auto hidden max-w-screen-lg items-center justify-between px-3 py-6 md:flex'>
-        <Logo />
-        <div className='flex items-center gap-8 text-xs tracking-widest'>
-          {navlinks.map(link => (
-            <Link
-              key={link.text}
-              href={link.href}
-              className='hover:text-muted-foreground'
-            >
-              {link.text}
-            </Link>
-          ))}
-        </div>
-      </nav>
-    </>
-  )
-}
-
-const MobileNav = () => {
-  return (
-    <>
-      <nav className='mx-auto flex max-w-screen-lg items-center justify-between p-6 md:hidden'>
-        <Logo />
-        <Sheet>
-          <SheetTrigger>
-            <AlignJustify />
-          </SheetTrigger>
-          <SheetContent className='flex flex-col gap-5 pt-16 tracking-widest'>
-            {navlinks.map(link => (
-              <Link
-                key={link.text}
-                href={link.href}
-                className='hover:text-muted-foreground'
-              >
-                {link.text}
-              </Link>
-            ))}
-          </SheetContent>
-        </Sheet>
-      </nav>
-    </>
+    <div className='fixed bottom-10 left-1/2 flex w-11/12 max-w-screen-md -translate-x-1/2 items-center justify-between rounded-2xl border border-foreground/15 bg-gradient-to-tr from-transparent to-foreground/5 p-2 pl-6 backdrop-blur-md sm:w-3/4 lg:w-2/5'>
+      <Link href='/'>
+        <h1 className={cn('font-semibold hover:text-primary-100')}>
+          HANASCRIPT
+        </h1>
+      </Link>
+      <div className='flex items-center gap-4'>
+        {LINKS.map((link, i) => (
+          <Link
+            key={i}
+            href={link.href}
+            className='text-sm font-semibold hover:text-primary-100'
+          >
+            {link.label}
+          </Link>
+        ))}
+        {/* <Sun className='size-4' /> // Todo: add dark mode */}
+      </div>
+    </div>
   )
 }

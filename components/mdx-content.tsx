@@ -1,6 +1,5 @@
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
-import { Counter } from './counter'
 
 const Code = ({ children, ...props }: any) => {
   let codeHTML = highlight(children)
@@ -8,8 +7,7 @@ const Code = ({ children, ...props }: any) => {
 }
 
 const components = {
-  code: Code,
-  Counter
+  code: Code
 }
 
 export const MDXContent = (props: JSX.IntrinsicAttributes & MDXRemoteProps) => {
