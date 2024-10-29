@@ -18,7 +18,7 @@ export const Terminal = ({
   image,
 }: Props) => {
   return (
-    <div className={cn('shadow-6xl flex flex-col bg-accent rounded w-full max-h-72', className)}>
+    <div className={cn('shadow-6xl flex flex-col bg-accent rounded w-full max-w-md', className)}>
       <div className='flex h-10 w-full items-center justify-between rounded-t bg-primary-500 px-3 text-sm text-background'>
         <p>{title}</p>
         <div className='flex items-center gap-2'>

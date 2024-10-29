@@ -52,16 +52,18 @@ export const DATA = {
   ],
   projects: [
     {
-      coverImage: '/projects/inventory-manager-desktop-1.png',
-      title: 'Inventory Manager',
-      description: 'A desktop application for managing inventory.',
+      coverImage: '/projects/cashflowe-desktop-1.png',
+      title: 'Cashflowe',
+      description:
+        'A budget tracking application that allows user to connect their bank accounts and track their expenses and income and visualize their spending habits',
       techStack: ['Next.js', 'React', 'TailwindCSS', 'Prisma', 'PostgreSQL'],
       href: 'https://github.com/TabuHana/inventory-manager'
     },
     {
       coverImage: '/projects/inventory-manager-desktop-1.png',
       title: 'Inventory Manager',
-      description: 'A desktop application for managing inventory.',
+      description:
+        'An application CMS application that allows users to manage there products, categories, and customers and track their orders',
       techStack: ['Next.js', 'React', 'TailwindCSS', 'Prisma', 'PostgreSQL'],
       href: 'https://github.com/TabuHana/inventory-manager'
     },
