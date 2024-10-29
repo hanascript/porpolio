@@ -1,8 +1,6 @@
 import { SpinningDonut } from '@/components/animations/spinning-donut'
 import { TerminalBoarder } from '@/components/terminal'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Typewrite } from '@/components/ui/typewrite'
-import { Computer } from 'lucide-react'
 
 export const Hero = () => {
   return (
@@ -13,9 +11,11 @@ export const Hero = () => {
           <h1 className='text-shadow text-6xl font-bold'>MARCELLOUS</h1>
           <Typewrite
             examples={[
-              'WEB DEVELOPER',
-              'UI/UX DESIGNER',
-              'FULLSTACK DEVELOPER'
+              'FULLSTACK DEVELOPER',
+              'SOLUTION STRATEGIST',
+              'CREATEIVE ANALYST',
+              'STRATEGIC THINKER',
+              'DIGITAL VISIONARY'
             ]}
           />
         </div>
@@ -27,7 +27,7 @@ export const Hero = () => {
         title='about me'
         className='-top-2 bg-background text-xs text-primary-100'
       >
-        <span className='text-xs leading-snug'>
+        <span className='text-xs leading-none'>
           I'm a software developer focused on creating dynamic and user-friendly
           applications. I mainly work in Next.js I'm a software engineer and a
           web developer. I love to create beautiful and functional websites
