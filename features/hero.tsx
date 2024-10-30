@@ -1,6 +1,8 @@
+import { Scramble } from '@/components/animations/scramble'
 import { SpinningDonut } from '@/components/animations/spinning-donut'
 import { TerminalBoarder } from '@/components/terminal'
 import { Typewrite } from '@/components/ui/typewrite'
+import { DATA } from '@/data/resume'
 
 export const Hero = () => {
   return (
@@ -15,7 +17,7 @@ export const Hero = () => {
               'SOLUTION STRATEGIST',
               'CREATEIVE ANALYST',
               'STRATEGIC THINKER',
-              'DIGITAL VISIONARY'
+              'DIGETAL ARCHITECT'
             ]}
           />
         </div>
@@ -27,12 +29,12 @@ export const Hero = () => {
         title='about me'
         className='-top-2 bg-background text-xs text-primary-100'
       >
-        <span className='text-xs leading-none'>
-          I'm a software developer focused on creating dynamic and user-friendly
-          applications. I mainly work in Next.js I'm a software engineer and a
-          web developer. I love to create beautiful and functional websites
-          using React.
-        </span>
+        <Scramble
+          className='px-2 py-4 text-sm hover:cursor-default'
+          repeat={false}
+          speed={1}
+          text={DATA.description}
+        />
       </TerminalBoarder>
     </section>
   )

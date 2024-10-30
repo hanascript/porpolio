@@ -11,7 +11,11 @@ export const LinkMinimap = () => {
     <div className='fixed -right-20 top-10 z-50 hidden w-full max-w-xs flex-col gap-2 lg:flex'>
       {LINKS.map((link, index) => (
         <Link key={index} href={link.href} className='text-sm'>
-          <Scramble text={link.label} icon={link.icon} />
+          <Scramble
+            text={link.label}
+            icon={link.icon}
+            className='hover:text-primary-100 text-xs'
+          />
         </Link>
       ))}
     </div>

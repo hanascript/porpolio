@@ -1,3 +1,4 @@
+import { Scramble } from '@/components/animations/scramble'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { DATA } from '@/data/resume'
 import { Wrench } from 'lucide-react'
@@ -15,19 +16,19 @@ export const Skills = () => {
           </CardTitle>
         </CardHeader>
         <CardContent className='flex flex-col gap-2'>
-          {SKILLS.map((skill, index) => (
-            <div key={index} className='flex gap-2 text-xs'>
-              <p className='font-semibold'>{skill.title}:</p>
-              <p className='text-muted-foreground'>
-                {skill.stack.map((stack, index) => (
-                  <span key={index}>
-                    {stack}
-                    {index < skill.stack.length - 1 && ', '}
-                  </span>
-                ))}
-              </p>
-            </div>
-          ))}
+          {SKILLS.map((skill, index) => {
+            const text = skill.stack.join(', ')
+
+            return (
+              <div
+                key={index}
+                className='flex gap-2 text-xs hover:cursor-default'
+              >
+                <p className='font-semibold'>{skill.title}:</p>
+                <Scramble className='text-muted-foreground' text={text} />
+              </div>
+            )
+          })}
         </CardContent>
       </Card>
     </section>

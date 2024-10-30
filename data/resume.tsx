@@ -7,9 +7,8 @@ export const DATA = {
   location: 'Carlsbad, CA',
   locationLink: 'https://www.google.com/maps/place/carlsbad',
   description:
-    'Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.',
-  summary:
-    'At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).',
+    'Hey, Im a software developer specializing in creating efficient, tailored solutions using Next.js. My approach is focused on understanding and addressing unique project needs to deliver practical, high-quality results. If your looking to develop or refine a project, feel free to get in touch — lets explore how my skills can support your vision.',
+  summary: '',
   avatarUrl: '/me.png',
   skills: [
     {
@@ -70,7 +69,8 @@ export const DATA = {
     {
       coverImage: '/projects/inventory-manager-desktop-1.png',
       title: 'Inventory Manager',
-      description: 'A desktop application for managing inventory.',
+      description:
+        'An application CMS application that allows users to manage there products, categories, and customers and track their orders',
       techStack: ['Next.js', 'React', 'TailwindCSS', 'Prisma', 'PostgreSQL'],
       href: 'https://github.com/TabuHana/inventory-manager'
     }
