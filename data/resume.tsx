@@ -46,7 +46,6 @@ export const DATA = {
     { href: '#contact', icon: Send, label: 'Contact' }
   ],
   navbar: [
-    { href: '/projects', label: 'Projects' },
     { href: '/posts', label: 'Posts' }
   ],
   projects: [
@@ -55,7 +54,7 @@ export const DATA = {
       title: 'Cashflowe',
       description:
         'A budget tracking application that allows user to connect their bank accounts and track their expenses and income and visualize their spending habits',
-      techStack: ['Next.js', 'React', 'TailwindCSS', 'Prisma', 'PostgreSQL'],
+      techStack: ['Next.js', 'React', 'TailwindCSS', 'Prisma', 'PostgreSQL', 'Zustand'],
       href: 'https://github.com/TabuHana/inventory-manager'
     },
     {
@@ -67,11 +66,11 @@ export const DATA = {
       href: 'https://github.com/TabuHana/inventory-manager'
     },
     {
-      coverImage: '/projects/inventory-manager-desktop-1.png',
-      title: 'Inventory Manager',
+      coverImage: '/projects/xvisualizer-desktop.png',
+      title: 'visualizer',
       description:
-        'An application CMS application that allows users to manage there products, categories, and customers and track their orders',
-      techStack: ['Next.js', 'React', 'TailwindCSS', 'Prisma', 'PostgreSQL'],
+        'An application that lets you visualize sorting algorithms and their complexity in real time and compare them to each other.',
+      techStack: ['Next.js', 'React', 'TailwindCSS', 'Zustand'],
       href: 'https://github.com/TabuHana/inventory-manager'
     }
   ]
