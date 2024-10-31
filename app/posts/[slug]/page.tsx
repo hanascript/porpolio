@@ -6,7 +6,6 @@ import { notFound } from 'next/navigation'
 import { MDXContent } from '@/components/mdx-content'
 import { getPostBySlug } from '@/lib/posts'
 import { formatDate } from '@/lib/utils'
-import { MDXRemote } from 'next-mdx-remote/rsc'
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = await params
@@ -52,7 +51,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
         </header>
 
         <main className='prose mt-16 max-w-none dark:prose-invert'>
-          <MDXRemote source={content} />
+          <MDXContent source={content} />
         </main>
       </div>
     </section>
