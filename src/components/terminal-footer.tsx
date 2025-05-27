@@ -1,14 +1,16 @@
 'use client';
 
-import { sendMessage } from '@/actions/send-message';
-import { Form, FormControl, FormField, FormItem } from '@/components/ui/form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { ChevronRight } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { useHarddrive } from './hooks/use-harddrive';
-import { Input } from './ui/input';
+import { ChevronRight } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { useEffect, useRef, useState } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import { sendMessage } from '@/actions/send-message';
+
+import { useHarddrive } from '@/components/hooks/use-harddrive';
+import { Input } from '@/components/ui/input';
+import { Form, FormControl, FormField, FormItem } from '@/components/ui/form';
 
 const messageSchema = z.object({
   message: z.string().max(110),
@@ -62,8 +64,9 @@ export const TerminalFooter = () => {
 
   // Update cursor position when input changes
   useEffect(() => {
+    const message = form.watch('message');
     // Get the current value
-    const value = form.watch('message');
+    const value = message;
 
     // Create a temporary span to measure text width
     const span = document.createElement('span');
@@ -80,7 +83,7 @@ export const TerminalFooter = () => {
 
     // Add a small padding
     setCursorPosition(width + 12);
-  }, [form.watch('message')]);
+  }, [form]);
 
   const onSubmit = async (values: z.infer<typeof messageSchema>) => {
     const response = await sendMessage(values);

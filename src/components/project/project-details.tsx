@@ -18,7 +18,7 @@ type Props = {
 export const ProjectDetails = ({ name, details }: Props) => {
 
   return (
-    <div className='pt-6 leading-none'>
+    <div className='py-6 leading-none'>
       <p className='text-blue-300 lowercase'>{name}</p>
       <span className='text-secondary'>------------</span>
       <div className='space-y-0.5'>

@@ -7,8 +7,8 @@ type Props = {
     R1: number;
     R2: number;
     K2: number;
-  }
-}
+  };
+};
 
 export const SpinningDonut = ({ values }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -22,10 +22,10 @@ export const SpinningDonut = ({ values }: Props) => {
 
     let animationFrameId: number;
 
-    const R1 = values?.R1 || 2; // ring size: 1
-    const R2 = values?.R2 || 0; // ring size: 2
+    const R1 = values?.R1 || 1; // ring size: 1
+    const R2 = values?.R2 || 2; // ring size: 2
     // const K1 = 150;
-    const K2 = values?.K2 || 4; // This is the scale of the donut: 5
+    const K2 = values?.K2 || 5; // This is the scale of the donut: 5
 
     // CHANGED: Adjusted dimensions for tighter fit
     const WIDTH = 60;
@@ -60,7 +60,7 @@ export const SpinningDonut = ({ values }: Props) => {
 
           const x = circleX * (cosB * cosPhi + sinA * sinB * sinPhi) - circleY * cosA * sinB;
           const y = circleX * (sinB * cosPhi - sinA * cosB * sinPhi) + circleY * cosA * cosB;
-          const z = K2 + cosA * circleX * sinPhi + circleY * sinA ;
+          const z = K2 + cosA * circleX * sinPhi + circleY * sinA;
           const ooz = 1 / z;
 
           // CHANGED: Adjusted calculations for tighter fit

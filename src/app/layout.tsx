@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 import { silkscreen, satoshi, gohu } from '@/fonts/font';
+import { Filter } from '@/components/animations/filter';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,10 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        className={`${silkscreen.variable} ${satoshi.variable} ${gohu.variable} antialiased`}
-      >
-        {children}
+      <body className={`${silkscreen.variable} ${satoshi.variable} ${gohu.variable} antialiased`}>
+        
+        <Filter>{children}</Filter>
       </body>
     </html>
   );

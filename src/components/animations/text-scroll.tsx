@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 export const TextScroll = ({ text = 'PROJECTS //' }: { text: string }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [copies, setCopies] = useState(3);
+  const [copies, setCopies] = useState(2);
   const [animationDuration, setAnimationDuration] = useState(20);
 
   useEffect(() => {
