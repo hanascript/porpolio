@@ -5,8 +5,8 @@ import { Filter } from '@/components/animations/filter';
 import { gohu, satoshi, silkscreen } from '@/fonts/font';
 
 export const metadata: Metadata = {
-  title: 'Nathan Marcellous Web Dev',
-  description: 'Nathan Marcellous Web Developer Portfolio',
+  title: 'Hanascript',
+  description: 'Web developer portfolio for Nathan Marcellous',
 };
 
 export default function RootLayout({
