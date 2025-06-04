@@ -26,7 +26,7 @@ export const ProjectsButton = () => {
       disabled={isDisabled}
       className={cn(currentModule === 'projects' && 'border-b-1')}
     >
-      <div className='flex items-center gap-1 group-hover:scale-110 transition-all'>
+      <div className='flex items-center gap-1 group-hover:scale-105 transition-all'>
         [
         <FolderOpen />] projects
       </div>

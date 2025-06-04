@@ -1,78 +1,79 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
+import Waves from '../blocks/Backgrounds/Waves/Waves';
 
-const StaticFilterOverlay = ({ intensity = 0.3, enabled = true }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number | null>(null);
+// const StaticFilterOverlay = ({ intensity = 0.3, enabled = true }) => {
+//   const canvasRef = useRef<HTMLCanvasElement>(null);
+//   const animationRef = useRef<number | null>(null);
 
-  useEffect(() => {
-    if (!enabled) return;
+//   useEffect(() => {
+//     if (!enabled) return;
 
-    if (!canvasRef.current) return;
+//     if (!canvasRef.current) return;
 
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+//     const canvas = canvasRef.current;
+//     const ctx = canvas.getContext('2d');
 
-    if (!ctx) return;
+//     if (!ctx) return;
 
-    // Set canvas size to window size
-    const updateCanvasSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
+//     // Set canvas size to window size
+//     const updateCanvasSize = () => {
+//       canvas.width = window.innerWidth;
+//       canvas.height = window.innerHeight;
+//     };
 
-    updateCanvasSize();
-    window.addEventListener('resize', updateCanvasSize);
+//     updateCanvasSize();
+//     window.addEventListener('resize', updateCanvasSize);
 
-    // Generate static noise
-    const generateStatic = () => {
-      const imageData = ctx.createImageData(canvas.width, canvas.height);
-      const data = imageData.data;
+//     // Generate static noise
+//     const generateStatic = () => {
+//       const imageData = ctx.createImageData(canvas.width, canvas.height);
+//       const data = imageData.data;
 
-      for (let i = 0; i < data.length; i += 4) {
-        const noise = Math.random() * 255;
-        data[i] = noise; // Red
-        data[i + 1] = noise; // Green
-        data[i + 2] = noise; // Blue
-        data[i + 3] = Math.random() * intensity * 255; // Alpha (transparency)
-      }
+//       for (let i = 0; i < data.length; i += 4) {
+//         const noise = Math.random() * 255;
+//         data[i] = noise; // Red
+//         data[i + 1] = noise; // Green
+//         data[i + 2] = noise; // Blue
+//         data[i + 3] = Math.random() * intensity * 255; // Alpha (transparency)
+//       }
 
-      ctx.putImageData(imageData, 0, 0);
-    };
+//       ctx.putImageData(imageData, 0, 0);
+//     };
 
-    // Animation loop
-    const animate = () => {
-      generateStatic();
-      animationRef.current = requestAnimationFrame(animate);
-    };
+//     // Animation loop
+//     const animate = () => {
+//       generateStatic();
+//       animationRef.current = requestAnimationFrame(animate);
+//     };
 
-    animate();
+//     animate();
 
-    // Cleanup
-    return () => {
-      window.removeEventListener('resize', updateCanvasSize);
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, [intensity, enabled]);
+//     // Cleanup
+//     return () => {
+//       window.removeEventListener('resize', updateCanvasSize);
+//       if (animationRef.current) {
+//         cancelAnimationFrame(animationRef.current);
+//       }
+//     };
+//   }, [intensity, enabled]);
 
-  if (!enabled) return null;
+//   if (!enabled) return null;
 
-  return (
-    <div className='fixed inset-0 pointer-events-none z-50'>
-      <canvas
-        ref={canvasRef}
-        className='w-full h-full'
-        style={{
-          mixBlendMode: 'multiply',
-          opacity: intensity,
-        }}
-      />
-    </div>
-  );
-};
+//   return (
+//     <div className='fixed inset-0 pointer-events-none z-50'>
+//       <canvas
+//         ref={canvasRef}
+//         className='w-full h-full'
+//         style={{
+//           mixBlendMode: 'multiply',
+//           opacity: intensity,
+//         }}
+//       />
+//     </div>
+//   );
+// };
 
 const VHSFilter = ({ children, intensity = 0.85 }: { children: React.ReactNode; intensity?: number }) => {
   const [glitchOffset, setGlitchOffset] = useState(0);
@@ -223,7 +224,29 @@ export const Filter = ({ children }: { children: React.ReactNode }) => {
   return (
     <VHSFilter>
       {children}
-      <StaticFilterOverlay />
+      {/* <StaticFilterOverlay /> */}
+      <div className='fixed -z-10 top-0 w-full h-full flex items-center justify-center text-secondary flex-col'>
+        <div className='relative'>
+          <p className='font-satoshi font-black uppercase text-primary-100 text-[4rem] lg:text-[10rem]'>HANASCRIPT</p>
+          <p className='relative uppercase text-primary-100 text-[0.6rem] lg:text-[0.875rem] bottom-2 lg:bottom-14 left-1 lg:left-3'>
+            ver 011 01110 00001 10110 00101
+          </p>
+        </div>
+      </div>
+      <Waves
+        lineColor='#8E8175'
+        backgroundColor='transparent'
+        waveSpeedX={0.02}
+        waveSpeedY={0.01}
+        waveAmpX={40}
+        waveAmpY={20}
+        friction={0.9}
+        tension={0.01}
+        maxCursorMove={60}
+        xGap={24}
+        yGap={56}
+        className='-z-50'
+      />
     </VHSFilter>
   );
 };
