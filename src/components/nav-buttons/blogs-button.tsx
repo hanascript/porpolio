@@ -1,12 +1,12 @@
 import { Button } from '../ui/button';
 
 import { Rss } from 'lucide-react';
-import { useHarddrive } from '@/components/hooks/use-harddrive';
+import { useKernel } from '@/components/hooks/use-kernel';
 import { cn } from '@/lib/utils';
 import { useSounds } from '@/components/hooks/use-sounds';
 
 export const BlogsButton = () => {
-  const { isDisabled, currentModule, setCurrentModule } = useHarddrive();
+  const { isDisabled, currentModule, setCurrentModule } = useKernel();
 
   const { play } = useSounds();
 

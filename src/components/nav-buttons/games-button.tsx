@@ -1,12 +1,12 @@
 import { Button } from '../ui/button';
 
 import { Swords } from 'lucide-react';
-import { useHarddrive } from '@/components/hooks/use-harddrive';
+import { useKernel } from '@/components/hooks/use-kernel';
 import { cn } from '@/lib/utils';
 import useSound from 'use-sound';
 
 export const GamesButton = () => {
-  const { isDisabled, currentModule, setCurrentModule } = useHarddrive();
+  const { isDisabled, currentModule, setCurrentModule } = useKernel();
 
   const [play] = useSound('/sounds/button-click.mp3', {
     playbackRate: 0.5,

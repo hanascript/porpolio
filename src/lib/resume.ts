@@ -9,11 +9,15 @@ export const resume = {
   services: [
     {
       name: 'Web Development',
-      href: '/services/web-development',
+      description:
+        'I build custom websites that combine clean, efficient code with seamless functionality to bring your vision to life. Every site is crafted with performance and user experience in mind, ensuring your visitors enjoy fast, intuitive interactions that drive results.',
+      service: ['CMS Integration', 'E-commerce Solutions', 'Custom Web & Mobile Applications'],
     },
     {
       name: 'Web Design',
-      href: '/services/web-design',
+      description:
+        'I create visually compelling designs that capture the essence of your brand while strategically guiding users toward your business objectives. My designs balance aesthetic appeal with conversion-focused layouts, helping you make a lasting impression and achieve measurable growth.',
+      service: ['UI/UX Design', 'Wireframing & Prototyping', 'Brand Integration'],
     },
     // {
     //   name: 'Web Hosting',
@@ -35,17 +39,12 @@ export const resume = {
   projects: [
     {
       id: 1,
-      name: 'Inv Manager',
+      title: 'Inv Manager',
       type: 'ecommerce',
       details: {
         os: 'nextjs 14',
-        host: 'vercel',
-        kernel: 'react 18',
-        manager: 'bun',
-        memory: 'postgresql',
         packages: 'prisma, shadcn, lucide, zod, zustand, next-safe-action',
-        languages: 'typescript, tailwind',
-        status: 'stable',
+        status: 'live',
       },
       description:
         'A simple inventory manager tool, that simulates how companies like shopify manage users, products orders and customers',
@@ -53,78 +52,47 @@ export const resume = {
         live: 'https://inventory-manager-zeta-six.vercel.app/',
         repo: 'https://github.com/hanascript/inventory-manager/',
       },
-      images: [
-        {
-          src: '/images/inv-manager.png',
-          alt: 'inv-manager',
-        },
-      ],
-      animation: {
-        R1: 1,
-        R2: 2,
-        K2: 5,
+      image: {
+        src: '/images/inv-manager.png',
+        alt: 'inv-manager',
       },
     },
     {
       id: 2,
-      name: 'visualizer',
+      title: 'visualizer',
       type: 'education',
       details: {
         os: 'NextJS 14',
-        host: 'Vercel',
-        kernel: 'React 18',
-        manager: 'pnpm',
-        memory: 'none',
         packages: 'shadcn, lucide, zustand',
-        languages: 'typescript, tailwind',
-        status: 'stable',
+        status: 'live',
       },
       description: 'This application allows you to visualize, sorting algorithms in real time',
       links: {
         live: 'https://xvisualizer.vercel.app/',
         repo: 'https://github.com/hanascript/visualizer/',
       },
-      images: [
-        {
-          src: '/images/visualizer.png',
-          alt: 'visualizer',
-        },
-      ],
-      animation: {
-        R1: 6,
-        R2: 5,
-        K2: 5,
+      image: {
+        src: '/images/visualizer.png',
+        alt: 'visualizer',
       },
     },
     {
       id: 3,
-      name: 'Cashflowe',
+      title: 'Cashflowe',
       type: 'budgeting',
       details: {
         os: 'nextjs 14',
-        host: 'vercel',
-        kernel: 'react 18',
-        manager: 'bun',
-        memory: 'postgresql',
         packages: 'hono, drizzle, zod, zustand, plaid, tanstack/react-query',
-        languages: 'typescript, tailwind',
-        status: 'stable',
+        status: 'live',
       },
       description: 'A budgeting tool that allows you to connect, your bank accounts and track your spending',
       links: {
         live: 'https://cashflowe.vercel.app/',
         repo: 'https://github.com/hanascript/cashflowe/',
       },
-      images: [
-        {
-          src: '/images/cashflowe.png',
-          alt: 'cashflowe',
-        },
-      ],
-      animation: {
-        R1: 1,
-        R2: 2,
-        K2: 5,
+      image: {
+        src: '/images/cashflowe.png',
+        alt: 'cashflowe',
       },
     },
   ],

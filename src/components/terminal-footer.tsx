@@ -7,7 +7,7 @@ import { ChevronRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { useHarddrive } from './hooks/use-harddrive';
+import { useKernel } from './hooks/use-kernel';
 import { Input } from './ui/input';
 
 const messageSchema = z.object({
@@ -20,7 +20,7 @@ export const TerminalFooter = () => {
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const { setCurrentModule } = useHarddrive();
+  const { setCurrentModule } = useKernel();
 
   const form = useForm<z.infer<typeof messageSchema>>({
     resolver: zodResolver(messageSchema),

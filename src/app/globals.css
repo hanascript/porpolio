@@ -121,3 +121,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Text Scroll Animation */
+@keyframes text-scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--marquee-distance, -50%));
+  }
+}

@@ -224,7 +224,6 @@ export const Filter = ({ children }: { children: React.ReactNode }) => {
   return (
     <VHSFilter>
       {children}
-      {/* <StaticFilterOverlay /> */}
       <div className='fixed -z-10 top-0 w-full h-full flex items-center justify-center text-secondary flex-col'>
         <div className='relative'>
           <p className='font-satoshi font-black uppercase text-primary-100 text-[4rem] lg:text-[10rem]'>HANASCRIPT</p>

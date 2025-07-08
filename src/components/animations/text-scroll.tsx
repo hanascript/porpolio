@@ -57,10 +57,11 @@ export const TextScroll = ({ text = 'PROJECTS //' }: { text: string }) => {
       className='relative overflow-hidden w-full whitespace-nowrap text-xs cursor-default select-none uppercase'
     >
       <div
-        className='inline-block animate-marquee'
+        className='inline-block'
         style={{
-          animation: `marquee ${animationDuration}s linear infinite`,
-        }}
+          animation: `text-scroll-marquee ${animationDuration}s linear infinite`,
+          '--marquee-distance': `-${100 / copies}%`,
+        } as React.CSSProperties}
       >
         {Array(copies)
           .fill(text)
@@ -73,17 +74,6 @@ export const TextScroll = ({ text = 'PROJECTS //' }: { text: string }) => {
             </span>
           ))}
       </div>
-
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-${100 / copies}%);
-          }
-        }
-      `}</style>
     </div>
   );
 };
