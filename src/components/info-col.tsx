@@ -17,13 +17,14 @@ export const InfoCol = () => {
       <div className='p-2'>
         <h1 className='text-4xl text-secondary tracking-wide'>NATHAN</h1>
         <h1 className='text-4xl text-secondary tracking-wide pb-4'>MARCELLOUS</h1>
-        <div className='space-y-2 text-xs'>
+        <div className='flex flex-col gap-4 text-xs'>
           <Link
             href='mailto:nathanm@hanascript.com'
             target='_blank'
             rel='noopener noreferrer'
+            className='w-fit'
           >
-            <div className='flex items-center w-fit cursor-pointer hover:text-secondary transition-all'>
+            <div className='flex items-center cursor-pointer hover:text-secondary transition-all'>
               <span className='mr-2'>
                 <Mail size={14} />
               </span>
@@ -34,8 +35,9 @@ export const InfoCol = () => {
             href='https://github.com/hanascript'
             target='_blank'
             rel='noopener noreferrer'
+            className='w-fit'
           >
-            <div className='flex items-center w-fit cursor-pointer hover:text-secondary transition-all'>
+            <div className='flex items-center cursor-pointer hover:text-secondary transition-all'>
               <span className='mr-2'>
                 <Github size={14} />
               </span>
@@ -46,8 +48,9 @@ export const InfoCol = () => {
             href='https://www.linkedin.com/in/nathan-marcellous/'
             target='_blank'
             rel='noopener noreferrer'
+            className='w-fit'
           >
-            <div className='flex items-center w-fit cursor-pointer hover:text-secondary transition-all'>
+            <div className='flex items-center cursor-pointer hover:text-secondary transition-all'>
               <span className='mr-2'>
                 <Linkedin size={14} />
               </span>
