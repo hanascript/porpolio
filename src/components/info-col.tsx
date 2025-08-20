@@ -5,7 +5,7 @@ import { Separator } from './ui/separator';
 
 export const InfoCol = () => {
   return (
-    <article className='border bg-background rounded-xs h-full col-span-1 lg:col-span-3'>
+    <article className='border bg-background rounded-xs col-span-1 lg:col-span-3 h-full'>
       <div className='flex items-center justify-between p-2 text-background bg-primary cursor-default select-none'>
         <p className='uppercase text-xs tracking-wide'>developer //</p>
         <p className='flex items-center gap-1 animate-pulse cursor-pointer'>

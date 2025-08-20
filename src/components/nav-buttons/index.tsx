@@ -11,6 +11,7 @@ export const NavButtons = () => {
     <div className='items-center gap-2 hidden md:flex'>
       <PowerButton />
       <VolumeButton />
+
       <div className='hidden'>
         <ProjectsButton />
         <BlogsButton />
