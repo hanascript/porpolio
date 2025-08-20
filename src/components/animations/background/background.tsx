@@ -5,7 +5,7 @@ import Model from './model';
 
 export default function Background() {
   return (
-    <div className='fixed -z-999 top-0 w-full h-full bg-background opacity-50'>
+    <div className='fixed -z-999 top-0 w-full h-full bg-background opacity-15'>
       <Canvas
         orthographic
         camera={{
