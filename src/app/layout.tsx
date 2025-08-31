@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
+
 import './globals.css';
 
-import { gohu, satoshi, silkscreen } from '@/fonts/font';
+import { gohu, satoshi } from '@/fonts/font';
+
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Hanascript',
+  title: 'Hanascript - Nathan Marcellous Portfolio',
   description: 'Web developer portfolio for Nathan Marcellous',
 };
 
@@ -18,7 +21,15 @@ export default function RootLayout({
       lang='en'
       suppressHydrationWarning
     >
-      <body className={`${silkscreen.variable} ${satoshi.variable} ${gohu.variable} antialiased`}>{children}</body>
+      <body className={`${satoshi.variable} ${gohu.variable} antialiased`}>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='dark'
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

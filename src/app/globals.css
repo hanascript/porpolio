@@ -6,9 +6,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-silkscreen);
+  --font-sans: var(--font-gohu);
   --font-satoshi: var(--font-satoshi);
-  --font-gohu: var(--font-gohu);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -44,7 +43,16 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* :root {
+/* Color Ideas */
+
+/* 
+oklch(0.4165 0.025 160) - Adds a gentle teal shift, more green than blue
+
+oklch(0.415 0.045 158) - Richer teal undertones - going with this one for right now
+
+*/
+
+:root {
   --radius: 0.625rem;
   --background: oklch(0.847 0.034 65.844);
   --foreground: oklch(21.3% 0 89.9);
@@ -53,8 +61,8 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(21.3% 0 89.9);
-  --primary-foreground: oklch(21.3% 0 89.9);
-  --secondary: oklch(65.4% 0.162 29.8);
+  --primary-foreground: oklch(0.847 0.034 65.844);
+  --secondary: oklch(0.415 0.045 158);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -77,9 +85,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-} */
+}
 
-:root {
+.dark {
   --radius: 0.625rem;
   --background: oklch(21.3% 0 89.9);
   --foreground: oklch(0.145 0 0);
@@ -88,7 +96,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.847 0.034 65.844);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.4165 0.0151 91.68);
   --secondary: oklch(65.4% 0.162 29.8);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -118,9 +126,23 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    overflow: hidden;
+  }
   body {
     @apply bg-background text-foreground;
+    overflow: hidden;
+    height: 100dvh;
+    cursor: wait;
   }
+}
+
+.glass {
+  @apply bg-gradient-to-br backdrop-blur-sm from-secondary/20 to-secondary/5;
+}
+
+.glass-hover {
+  @apply bg-gradient-to-br backdrop-blur-sm from-secondary/20 to-secondary/5 hover:bg-secondary/15 hover:shadow-none transition-all duration-300;
 }
 
 /* Text Scroll Animation */
@@ -133,14 +155,20 @@
   }
 }
 
-.glass-effect {
-  @apply relative bg-gradient-to-br backdrop-blur-xs border rounded-xl shadow-2xl;
+@keyframes scanlines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
 }
 
-.glass {
-  @apply from-white/20 to-white/5 border-white/30;
-}
-
-.dark-glass {
-  @apply from-gray-900/20 to-gray-700/5 border-gray-700/50;
+@keyframes tracking {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
 }

@@ -1,11 +1,12 @@
 'use client';
 
 import { Canvas } from '@react-three/fiber';
-import Model from './model';
 
-export default function Background() {
+import { Model } from './model';
+
+export default function Scene() {
   return (
-    <div className='fixed -z-999 top-0 w-full h-full bg-background opacity-15'>
+    <div className='bg-background fixed top-0 -z-999 h-full w-full opacity-40 dark:opacity-15'>
       <Canvas
         orthographic
         camera={{

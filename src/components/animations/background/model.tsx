@@ -1,16 +1,16 @@
 import { useEffect, useRef } from 'react';
-import { fragment, vertex } from './shader';
 import { useFrame } from '@react-three/fiber';
-
-import * as THREE from 'three';
 import { useTheme } from 'next-themes';
+import * as THREE from 'three';
+
+import { fragment, vertex } from './shader';
 
 const THEME_COLORS = {
   light: new THREE.Color(0xdfd6c0),
   dark: new THREE.Color(0xcfc0ae),
 };
 
-export default function Model() {
+export const Model = () => {
   const { theme } = useTheme();
 
   const uniforms = useRef({
@@ -20,7 +20,8 @@ export default function Model() {
 
   useEffect(() => {
     if (uniforms.current) {
-      uniforms.current.uColor.value = THEME_COLORS[theme as keyof typeof THEME_COLORS] || THEME_COLORS.light;
+      uniforms.current.uColor.value =
+        THEME_COLORS[theme as keyof typeof THEME_COLORS] || THEME_COLORS.light;
     }
   }, [theme]);
 
@@ -44,4 +45,4 @@ export default function Model() {
       </mesh>
     </>
   );
-}
+};

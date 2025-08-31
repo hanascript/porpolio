@@ -4,12 +4,12 @@ export const Filter = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       {children}
-      <div className='fixed -z-10 top-0 w-full h-full flex items-center justify-center text-secondary flex-col'>
+      <div className='text-secondary fixed top-0 -z-10 flex h-full w-full flex-col items-center justify-center'>
         <div className='relative'>
-          <p className='m-0 leading-none font-satoshi font-black uppercase text-primary-100 text-[4rem] lg:text-[8rem]'>
+          <p className='font-satoshi text-primary-100 m-0 text-[4rem] leading-none font-black uppercase lg:text-[8rem]'>
             HANASCRIPT
           </p>
-          <p className='relative uppercase text-primary-100 text-[0.6rem] lg:text-[0.875rem] bottom-2 lg:bottom-14 lg:mt-10 left-1 lg:left-3'>
+          <p className='text-primary-100 relative bottom-2 left-1 text-[0.6rem] uppercase lg:bottom-14 lg:left-3 lg:mt-10 lg:text-[0.875rem]'>
             ver 011 01110 00001 10110 00101
           </p>
         </div>

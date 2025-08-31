@@ -1,32 +1,26 @@
-'use client';
-
-import { Volume2, VolumeOff } from 'lucide-react';
+import { Volume2, VolumeX } from 'lucide-react';
 
 import { useKernel } from '@/components/hooks/use-kernel';
 import { useSounds } from '@/components/hooks/use-sounds';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 
 export const VolumeButton = () => {
   const { isVolumeDisabled, setIsVolumeDisabled } = useKernel();
+
   const { play } = useSounds();
 
   const handleClick = () => {
-    play({ id: 'click2' });
+    if (isVolumeDisabled) {
+      play({ id: 'click2' });
+    }
     setIsVolumeDisabled(!isVolumeDisabled);
   };
 
   return (
-    <Button
-      variant={isVolumeDisabled ? 'secondary' : 'default'}
+    <button
+      className='hover:bg-secondary/15 p-2.5 hover:cursor-pointer'
       onClick={handleClick}
-      className={cn(isVolumeDisabled && 'border-b-1')}
     >
-      <div className='flex items-center gap-1 group-hover:scale-110 transition-all'>
-        <span>[</span>
-        <span>{isVolumeDisabled ? <VolumeOff /> : <Volume2 />}</span>
-        <span>]</span>
-      </div>
-    </Button>
+      {isVolumeDisabled ? <VolumeX className='size-4' /> : <Volume2 className='size-4' />}
+    </button>
   );
 };

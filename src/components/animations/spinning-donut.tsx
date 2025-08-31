@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useTheme } from 'next-themes';
+import { useMountedState } from 'react-use';
 
 type Props = {
   values?: {
@@ -12,8 +14,17 @@ type Props = {
 
 export const SpinningDonut = ({ values }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const isMounted = useMountedState();
+
+  const { theme } = useTheme();
+  const themeRef = useRef<string | undefined>(theme);
+
+  // Update the ref whenever theme changes
+  themeRef.current = theme;
 
   useEffect(() => {
+    if (!isMounted()) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -94,7 +105,7 @@ export const SpinningDonut = ({ values }: Props) => {
       context.clearRect(0, 0, canvas.width, canvas.height);
 
       context.font = `${PIXEL_SIZE}px monospace`;
-      context.fillStyle = '#CFC0AE';
+      context.fillStyle = themeRef.current === 'light' ? 'black' : '#CFC0AE';
 
       const donutAscii = calculateDonut(A, B);
       // CHANGED: Adjusted rendering to account for padding
@@ -117,7 +128,7 @@ export const SpinningDonut = ({ values }: Props) => {
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [values]);
+  }, [values, isMounted]);
 
   // CHANGED: Adjusted canvas size to account for padding and ASCII character size
   return (

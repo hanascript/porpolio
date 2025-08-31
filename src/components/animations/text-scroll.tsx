@@ -54,21 +54,23 @@ export const TextScroll = ({ text = 'PROJECTS //' }: { text: string }) => {
   return (
     <div
       ref={containerRef}
-      className='relative overflow-hidden w-full whitespace-nowrap text-xs cursor-default select-none uppercase'
+      className='relative w-full cursor-default overflow-hidden text-xs whitespace-nowrap uppercase select-none'
     >
       <div
         className='inline-block'
-        style={{
-          animation: `text-scroll-marquee ${animationDuration}s linear infinite`,
-          '--marquee-distance': `-${100 / copies}%`,
-        } as React.CSSProperties}
+        style={
+          {
+            animation: `text-scroll-marquee ${animationDuration}s linear infinite`,
+            '--marquee-distance': `-${100 / copies}%`,
+          } as React.CSSProperties
+        }
       >
         {Array(copies)
           .fill(text)
           .map((item, index) => (
             <span
               key={index}
-              className='inline-block mx-2'
+              className='mx-2 inline-block'
             >
               {item}
             </span>
